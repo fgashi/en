@@ -1,0 +1,24 @@
+\begin{equation}
+ \label{eq:Newton_KKT}
+ \vspace{6pt}
+    \begin{split}
+%    \small
+    \begin{bmatrix}
+    \nabla^2_{\mathbf{xx}}\mathbf{\mathcal{L}} &\mathbf{0} &\nabla \mathbf{c}^T_{E}(\mathbf{x}) & -\nabla \mathbf{c}^T_{I}(\mathbf{x}) \\
+    \mathbf{0} & \Vec{\Xi} & \mathbf{0} & \mathbf{S} \\
+    \nabla \mathbf{c}_{E}(\mathbf{x}) &\mathbf{0} &\mathbf{0} & \mathbf{0} \\
+    \nabla \mathbf{c}_{I}(\mathbf{x}) &-\mathbf{I} &\mathbf{0} &\mathbf{0}
+    \end{bmatrix} \begin{bmatrix}
+    \Delta\mathbf{x} \\
+    \Delta\mathbf{s}\\
+    \Delta \Vec{\lambda}\\
+    \Delta\Vec{\xi}
+    \end{bmatrix} = - \begin{bmatrix}
+    \nabla \mathbf{f}(\mathbf{x})+\nabla \mathbf{c}^T_{E}(\mathbf{x})\Vec{\lambda} - \nabla \mathbf{c}^T_{I}(\mathbf{x})\Vec{\xi} \\
+    -\mathbf{S} \Vec{\xi} + {\mu}\mathbf{e}\\ 
+    \mathbf{c}_{E}(\mathbf{x})\\
+    \mathbf{c}_{I}(\mathbf{x}) - \mathbf{s}
+    \end{bmatrix},
+ %   \vspace{6pt}
+    \end{split}
+\end{equation}

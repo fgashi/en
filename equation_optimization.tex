@@ -1,0 +1,28 @@
+\begin{subequations}
+\label{eq:MPC}
+%\vspace{-6pt}
+%\hspace{-25pt}
+\begin{align}
+    \underset{\mathbf{u}}{\min} \quad & t_{f} \tag{\ref{eq:MPC}} \\[1mm]
+    %dynamics 
+	\text{s.t.} \quad \,\,  &\mathbf{x}(j+1 \,|\,k) = \,(\mathbf{I}+\Delta\tau \mathbf{A})\mathbf{x}(j\,|\,k) +
+	 \Delta \tau t_f^2 \!\left(\!\mathbf{I}+\frac{\Delta \tau}{2}\mathbf{A}\!\right)\!\mathbf{B}\mathbf{u}(j\,|\,k) \label{eq:dynamic} \\[1mm]
+	 &\mathbf{x}(j+1\,|\,k) \leq \, \text{diag}(\mathbf{I},t_f\mathbf{I},\mathbf{I},t_f\mathbf{I}) \mathbf{x}_{\max} \label{eq:xilim1}\\[1mm]
+	 &\mathbf{x}(j+1\,|\,k) \geq  \, \text{diag}(\mathbf{I},t_f\mathbf{I},\mathbf{I},t_f\mathbf{I})
+	 \mathbf{x}_{\min} \label{eq:xilim2}\\[1mm]
+	 %
+	 &\mathbf{u}_{\min} \leq  \, \mathbf{u}(j+1 \,|\, k) \leq \mathbf{u}_{\max} \label{eq:ulim}\\[1mm]
+ 	 %
+	 &\mathbf{x}(0 \,| \, k) =  \, \text{diag}(\mathbf{I},t_f\mathbf{I},\mathbf{I},t_f\mathbf{I}) \mathbf{x}_0(k)  \label{eq:initstate} \\[1mm]
+	 &\mathbf{x}(N_p \,| \, k) =  \, \text{diag}(\mathbf{I},t_f\mathbf{I},\mathbf{I},t_f\mathbf{I}) \mathbf{x}_f(k) \label{eq:desiredstate} \\[1mm]
+	 %
+	 &\delta_z z_{\min} \leq (1-\delta_z)z_{\min}
+	 + \delta_z z_r(\mathbf{x}(j+1 \,| \,k)), \, r \in \{1,2\} \label{eq:height}\\[1mm]
+	 %
+     &\delta_c \epsilon \leq (1-\delta_c)\epsilon + \delta_c\frac{1}{t_f} 
+     \big[ \mathbf{0} \,\, -\!\mathbf{n}^T\mathbf{J}_{p_1}(\mathbf{x}(\bar{j}+1 \,| \,k))  \label{eq:coll}\\ \nonumber 
+     &\qquad \qquad \hphantom{+\delta_c \epsilon \leq \delta_c\frac{1}{t_f} \big[}\, 
+     \mathbf{0} \,\, \hphantom{-\,}\mathbf{n}^T\mathbf{J}_{p_2}(\mathbf{x}(\bar{j}+1 \,| \,k))\big]
+     \mathbf{x}(\bar{j}+1 \,| \,k). 
+\end{align}
+\end{subequations}

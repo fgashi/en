@@ -1,0 +1,198 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{enumitem}
+
+% Symmetric layout (NO shifting)
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=20mm
+}
+
+% List settings
+\setlist[enumerate]{
+    label=Q\arabic*.,
+    labelindent=0pt,
+    leftmargin=3.5em,
+    align=left,
+    font=\bfseries,
+    itemsep=1.2em
+}
+
+% Task grid
+\settasks{
+    label=$\square$,
+    label-width=1.5em,
+    column-sep=12pt,
+    item-indent=0pt,
+    after-item-skip=2pt
+}
+
+\title{\vspace{-1.5cm}\textbf{Academic Research Tools Survey}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-1.2cm}
+
+\noindent\textit{This survey examines academic writing tool usage. Duration: $\sim$5 minutes. Responses are anonymous.}
+
+\vspace{0.8cm}
+
+% \section*{Part 1: Demographics}
+
+\begin{enumerate}
+
+\item What is your current role?
+\begin{tasks}(3)
+\task Undergraduate \task Master’s \task PhD
+\task Postdoc \task Faculty \task Other: \rule{2.5cm}{0.4pt}
+\end{tasks}
+
+\item What is your primary field of study?
+\begin{tasks}(2)
+
+\task STEM\footnotemark \task Social Sciences
+\task Humanities \task Other: \rule{2.5cm}{0.4pt}
+\end{tasks}
+\vspace{-5pt}
+
+% \footnotetext{Science, Technology, Engineering, and Mathematics}
+\footnotetext{STEM: Science, Technology, Engineering, and Mathematics}
+
+\item What is your age? \rule{3cm}{0.4pt} Years
+\item Have you ever used any programming language?
+\begin{tasks}(2)
+\task Yes \task No
+\end{tasks}
+\end{enumerate}
+
+% \section*{Part 2: Tool Usage}
+
+\begin{enumerate}[resume]
+
+\item What writing tools do you use? (Select all that apply)
+\begin{tasks}(3)
+\task LaTeX \task MS Word \task Google Docs
+\task Markdown \task Other: \rule{2.5cm}{0.4pt}
+\end{tasks}
+
+% \item Which tool do you use most frequently?
+% \begin{tasks}(3)
+% \task LaTeX \task MS Word \task Google Docs
+% \task Markdown \task Other: \rule{2.5cm}{0.4pt}
+% \end{tasks}
+\item Do you have a license for your tool of choice?
+\begin{tasks}(2)
+\task Yes \task No \task I have no idea \task It is open-source
+\end{tasks}
+\item How often do you use each tool?
+
+\vspace{0.3cm}
+
+{\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Tool} & \textbf{Daily} & \textbf{Weekly} & \textbf{Monthly} & \textbf{Rarely} & \textbf{Never} \\
+\midrule
+LaTeX        & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+MS Word      & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+Google Docs  & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+Markdown     & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+Other: \rule{2.5cm}{0.4pt}     & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\bottomrule
+\end{tabular}
+}
+
+\end{enumerate}
+\vspace{1pt}
+% \newpage
+
+% \section*{Part 3: Specific Use Cases}
+
+\begin{enumerate}[resume]
+
+\item For which purposes do you use each tool?
+
+\vspace{0.3cm}
+
+{\small
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+\textbf{Tool} & \textbf{Papers} & \textbf{Thesis} & \textbf{Course} & \textbf{Notes} & \textbf{Slides}& \textbf{Seminar} & \textbf{Admin} \\
+\midrule
+LaTeX        & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$\\
+MS Word      & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+Google Docs  & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+Markdown    & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$  & $\square$ \\
+Other: \rule{2.5cm}{0.4pt}    & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & $\square$  & $\square$ \\
+
+\bottomrule
+\end{tabular}
+}
+\newpage
+\item Percentage of writing by tool (Total 100\%)
+\begin{tasks}(3)
+\task LaTeX: \rule{1.2cm}{0.4pt}\%
+\task MS Word: \rule{1.2cm}{0.4pt}\%
+\task Other: \rule{1.2cm}{0.4pt}\%
+\end{tasks}
+
+\item If you use LaTeX, when do you prefer it?
+\begin{tasks}(2)
+\task Research papers
+\task Long documents
+\task Math-heavy writing
+\task Journal requirements
+\task Almost everything
+\task Other: \rule{2.5cm}{0.4pt}
+\end{tasks}
+
+\item If you do not use LaTeX, what are the reasons? (Select all that apply)
+\begin{tasks}(2)
+\task Not needed
+\task Too complex
+\task Prefer visual editors
+\task No time
+\task Never heard of it
+\task Other: \rule{2.5cm}{0.4pt}
+\end{tasks}
+\item Do you use version control?
+\begin{tasks}
+    \task Yes (\textit{Answer Q13})
+    \task No (\textit{Skip Q13})
+\end{tasks}
+\item What tools do you use for version control?
+\begin{tasks}(3)
+    \task Subversion(SVN)
+    \task GitLab
+    \task GitHub
+    \task Bitbucket
+    \task Other: \rule{2.5cm}{0.4pt}
+    
+\end{tasks}
+\item What tool do you use for research management?
+\begin{tasks}(3)
+    \task Zotero
+    \task Mendeley
+    \task EndNote
+    \task Other: \rule{2.5cm}{0.4pt}
+    \task None
+\end{tasks}
+\end{enumerate}
+
+\end{document}

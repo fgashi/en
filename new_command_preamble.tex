@@ -1,0 +1,16 @@
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{latexcommand}{RGB}{0,0,180}      
+\definecolor{latexargument}{RGB}{120,40,140} 
+\definecolor{latexbracket}{RGB}{180,100,0}   
+\lstset{
+    language=[LaTeX]TeX,
+    basicstyle=\ttfamily,
+    breaklines=true,
+    columns=fullflexible,
+    texcsstyle=*\color{latexcommand},          
+    moredelim=[s][\color{latexbracket}]{[}{]},  
+    moredelim=[s][\color{latexargument}]{\{}{\}} 
+}

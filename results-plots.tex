@@ -1,0 +1,130 @@
+\documentclass[border=3mm,
+               tikz,
+               preview
+               ]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.10}
+\usetikzlibrary{arrows}
+%\pgfplotsset{width=8cm,compat=newest}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{
+	%locale = DE ,
+	per-mode = symbol
+}
+\begin{document}
+
+\begin{figure}[b]
+\centering
+    %\vspace{6pt}
+    \begin{tikzpicture}[trim left=-1.0cm]
+%	\begin{axis}
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor6}{rgb}{0.30100,0.74500,0.93300}%
+\definecolor{mycolor7}{rgb}{0.63500,0.07800,0.18400}%
+%\colorlet{ColorPink}{black!10}
+%   [name=plot, xmin=0,xmax=231,ymin=0,ymax=1]
+%\end{axis}
+
+	\begin{groupplot}[group style={group size=1 by 3,vertical sep=0.65cm},
+	height=0.95\linewidth,width=0.95\linewidth,
+	y label style={at={(-0.058,0.5)}},
+	]
+	\nextgroupplot[width=1.1\linewidth,height=6.5cm,xmin=0,
+            xmax=24.2,
+%            ymax=-6,ymax=6,
+%            xtick={0,50,..300},            
+            /tikz/font=\small,
+            grid,
+            grid style={dotted,gray},
+%            ytick={0,0.5},            
+            ylabel={Joint Angle (\SI{}{\radian})},
+%			xlabel={Time (\SI{}{\second})} , xlabel near ticks,
+%            xticklabel=\empty,
+            every axis/.append style={
+            legend image post style={xscale=1.26}},
+            legend style={at={(1,1.01)},anchor=south east,legend columns=-1},
+         	title style={at={([yshift=-4ex]0.5,0)},anchor=north}, 
+         	subtitle/.style={title},		
+            ]
+            \addplot[mark=none,mycolor1,line width=1.00]table[x=t1, y expr=\thisrow{q1}]{./graphics/results/traj_results/case3/total_positions_q2.txt};
+             \addplot[mark=none,mycolor2,line width=1.50]table[x=t1, y expr=\thisrow{q2}]{./graphics/results/traj_results/case3/total_positions_q2.txt};  
+              
+            \addplot[mark=none,mycolor3,line width=1.0]table[x=t1, y expr=\thisrow{q3}]{./graphics/results/traj_results/case3/total_positions_q2.txt};
+            
+            \addplot[mark=none,mycolor4,line width=1.0]table[x=t1, y expr=\thisrow{q4}]{./graphics/results/traj_results/case3/total_positions_q2.txt};
+%            \addlegendentry{$q_4$\,}
+
+            \addplot[mark=none,mycolor5,line width=1.0]table[x=t1, y expr=\thisrow{q5}]{./graphics/results/traj_results/case3/total_positions_q2.txt};
+ %           \addlegendentry{$q_5$\,}
+            
+            \addplot[mark=none,mycolor6,line width=1.0]table[x=t1, y expr=\thisrow{q6}]{./graphics/results/traj_results/case3/total_positions_q2.txt};
+  %          \addlegendentry{$q_6$\,}
+             \legend{Joint 1,Joint 2,Joint 3,Joint 4,Joint 5,Joint 6};    
+        %VELOCITY     
+    	\nextgroupplot[width=1.1\linewidth,height=6.5cm,xmin=0,
+            xmax=24.2,
+%            ymax=-6,ymax=6,
+%            xtick={0,50,..300},            
+            /tikz/font=\small,
+            grid,
+            grid style={dotted,gray},
+%            ytick={0,0.5},                    
+            ylabel={Joint Velocity (\SI{}{\radian\per\second})},
+%			xlabel={Time (\SI{}{\second})} , xlabel near ticks,
+%            xticklabel=\empty,
+            legend style={at={(1,1.01)},anchor=south east,legend columns=-1},
+         	title style={at={([yshift=-4ex]0.5,0)},anchor=north}, 
+         	subtitle/.style={title},		
+            ]
+            \addplot[mark=none,mycolor1,line width=1.00]table[x=t1, y expr=\thisrow{v1}]{./graphics/results/traj_results/case3/total_vel_q2.txt};
+             \addplot[mark=none,mycolor2,line width=1.50]table[x=t1, y expr=\thisrow{v2}]{./graphics/results/traj_results/case3/total_vel_q2.txt};  
+            \addplot[mark=none,mycolor3,line width=1.0]table[x=t1, y expr=\thisrow{v3}]{./graphics/results/traj_results/case3/total_vel_q2.txt};
+    
+            \addplot[mark=none,mycolor4,line width=1.0]table[x=t1, y expr=\thisrow{v4}]{./graphics/results/traj_results/case3/total_vel_q2.txt};
+
+            \addplot[mark=none,mycolor5,line width=1.0]table[x=t1, y expr=\thisrow{v5}]{./graphics/results/traj_results/case3/total_vel_q2.txt};
+            
+            \addplot[mark=none,mycolor6,line width=1.0]table[x=t1, y expr=\thisrow{v6}]{./graphics/results/traj_results/case3/total_vel_q2.txt};
+        %
+    	\nextgroupplot[width=1.1\linewidth,height=6.5cm,xmin=0,
+            xmax=24.2,
+%            ymax=-6,ymax=6,
+%            xtick={0,50,..300},            
+            /tikz/font=\small,
+            grid,
+            grid style={dotted,gray},
+%            ytick={0,0.5},            
+            ylabel={Joint Acceleration (\SI{}{\radian\per\second^2})},
+			xlabel={Time (\SI{}{\second})} , xlabel near ticks,
+%            xticklabel=\empty,
+            legend style={at={(1,1.01)},anchor=south east,legend columns=-1},
+         	title style={at={([yshift=-4ex]0.5,0)},anchor=north}, 
+         	subtitle/.style={title},		
+            ]
+            \addplot[mark=none,mycolor1,line width=1.00]table[x=t1, y expr=\thisrow{a1}]{./graphics/results/traj_results/case3/total_mpc_accl2.txt};
+             \addplot[mark=none,mycolor2,line width=1.50]table[x=t1, y expr=\thisrow{a2}]{./graphics/results/traj_results/case3/total_mpc_accl2.txt};  
+              
+            \addplot[mark=none,mycolor3,line width=1.0]table[x=t1, y expr=\thisrow{a3}]{./graphics/results/traj_results/case3/total_mpc_accl2.txt};
+    
+            \addplot[mark=none,mycolor4,line width=1.0]table[x=t1, y expr=\thisrow{a4}]{./graphics/results/traj_results/case3/total_mpc_accl2.txt};
+
+   %        \addplot[mark=none,mycolor5,line width=1.0]table[x=t1, y expr=\thisrow{a5}]{./graphics/results/traj_results/case1//total_mpc_accl1.txt};
+            
+  %        \addplot[mark=none,mycolor6,line width=1.0]table[x=t1, y expr=\thisrow{a6}]{./graphics/results/traj_results/case1/total_mpc_accl1.txt};
+    \end{groupplot}
+                
+                
+    \end{tikzpicture}%
+%	\vspace{-3mm}
+	\caption{Error values of first three joints during reference tracking. Because of small values, they can be affected by noise coming from sensors.}%
+	\label{fig:case1}
+	\vspace{-10pt}
+\end{figure}    
+
+\end{document}

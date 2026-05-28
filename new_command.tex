@@ -1,0 +1,19 @@
+\documentclass{article}
+\include{new_command_preamble}
+\begin{document}
+\newcommand{\bb}[1]{\mathbb{#1}}
+The complex numbers:\( \bb{C} \),\\ 
+and the integer numbers \( \bb{Z} \).\\
+\newcommand{\plusbin}[4][2]{(#2 + #3)^{#1}}
+We can use it like this: 
+\[ \plusbin{x}{y}{5} \]
+And even the exponent can be changed:
+\[ \plusbin[4]{a}{b}{g} \]
+The standard syntax for defining a command
+\\ with an optional default value is:
+\begin{lstlisting}
+\newcommand{\commandname}[number of arguments]
+[default value]{definition}
+\end{lstlisting}
+\end{document}
+

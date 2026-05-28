@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{url}
+\geometry{landscape, textwidth=27cm}
+\usepackage{circuitikz}
+\begin{document}
+
+\newcommand{\bipole}[1]{%
+\texttt{#1}\kern5pt \hfill
+\begin{circuitikz}%
+\draw (0,0) to[ #1 ] (2,0); 
+\end{circuitikz}%
+\hspace{5mm}%
+}
+
+\renewcommand{\arraystretch}{3}
+\section{Overall Examples}
+\begin{center}
+\begin{tabular}{lll} 
+\bipole{empty diode} & \bipole{empty Schottky diode} & \bipole{empty Zener diode}\\
+\bipole{empty tunnel diode} & \bipole{photodiode} & \bipole{empty diode}\\
+\bipole{empty varcap} & \bipole{full diode} & \bipole{full Schottky diode}\\
+\bipole{full Zener diode} & \bipole{full tunnel diode} & \bipole{full photodiode}\\
+
+\bipole{barrier} & & \\
+\end{tabular}
+\end{center}
+
+
+\section{Electrical Circuit}    
+\begin{center}
+\begin{circuitikz}[american voltages]
+\draw
+  (0,0) to [short, *-] (6,0)
+  to [V, l_=$\mathrm{j}{\omega}_m \underline{\psi}^s_R$] (6,2) 
+  to [R, l_=$R_R$] (6,4) 
+  to [short, i_=$\underline{i}^s_R$] (5,4) 
+  (0,0) to [open, v^>=$\underline{u}^s_s$] (0,4) 
+  to [short, *- ,i=$\underline{i}^s_s$] (1,4) 
+  to [R, l=$R_s$] (3,4)
+  to [L, l=$L_{\sigma}$] (5,4) 
+  to [short, i_=$\underline{i}^s_M$] (5,3) 
+  to [L, l_=$L_M$] (5,0); 
+\end{circuitikz}
+\end{center}
+% \end{document}\\
+For additional examples with TikZ, visit \url{https://tikz.net/}, whereas particularly for electronics, explore the following: \url{https://tikz.net/electric_circuit_resistor/} 
+\end{document}

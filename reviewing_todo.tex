@@ -1,0 +1,24 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{Example: Formatted todonotes}
+\author{NB,FG}
+
+\begin{document}
+\maketitle
+
+\todo[inline]{Here's an inline comment below the title \& author.}
+\newcommand{\NB}[1]{\todo[color=green!40]{#1}}
+\newcommand{\Fatos}[1]{\todo[color=purple!40]{#1}}
+\begin{abstract}
+Your abstract.\Fatos{You can use \textit{italic in a comment}, like this.}
+\end{abstract}
+
+\section{Introduction}
+
+Here is some introductory text.\NB{You can use \textbf{bold in a comment}, like this.}
+\todo[inline]{Expand the intro}
+\end{document}customization
