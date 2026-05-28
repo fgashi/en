@@ -118,6 +118,7 @@ reference it in the document. For example, \bftt{Jacobson1999Towards} is the key
 \item It's a good idea to use a key based on the name, year and title.
 \item \LaTeX{} can automatically format your in-text citations and generate a
 list of references; it knows most standard styles, and you can design your own.
+\item \alert{Extract} a citation from a random paper
 \end{itemize}
 \end{frame}
 
@@ -183,16 +184,69 @@ Add an image and a bibliography to the paper from the previous exercise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Rendering plots in \LaTeX}
+\begin{itemize}
     \item Plotting graphs directly in latex via \emph{pgfplots} package
     \item Compile \emph{results-plots.tex}
     \item Discuss the data preparation with headers
+    \item For additional plots, refer tu \emph{MPC\_PID} paper
+    \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Some good practices}
-\subsection{}
+\subsection[fragile]{Figures}
+\begin{frame}{Figures}
+\begin{itemize}
+    \item Figures should be prepared in vector format (WMF, EMF, PDF, \ldots) for good quality and small size
+    \item Figures should not be prepared in bitmap format (JPG, BMP, PNG, GIF, TIF, \ldots)
+    \item Figures can be prepared in vector format e.g. with
+    \begin{itemize}
+        \item MATLAB (use Edit $\rightarrow$ Copy Figure and Paste $\rightarrow$ Paste Special $\rightarrow$ Picture (Enhanced Metafile))
+        \item MATLAB (use Edit $\rightarrow$ Copy Options $\rightarrow$ Figure Copy Template/Copy Options for configuration)
+    
+    \item Simulink (use Edit $\rightarrow$ Copy Current View to Clipboard $\rightarrow$ Metafile and Paste $\rightarrow$ Paste Special \ldots)
+\end{itemize}
+\item Remark:
+\begin{itemize}
+    \item Figures in vector format will not become pixelated when zooming
+    \item Figures in bitmap format will become pixelated when zooming
+\end{itemize}
+\end{itemize}
+% \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{More of Figures}
+    \begin{itemize}
+        \item Fonts
+        \begin{itemize}
+            \item The font in the figures should be the same as the font in the paper
+            \item The font size in the figures should be minimally 6 pt
+        \end{itemize}
+        \item Colors
+        \begin{itemize}
+            \item Colors should be used and chosen moderately
+            \item Use printer colors
+        \end{itemize}
+        \item Inkscape
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \end{document}
 
 
